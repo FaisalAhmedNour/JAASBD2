@@ -54,8 +54,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-bd" className={`${aeonik.variable} font-sans scroll-smooth`}>
-      <body className="min-h-screen flex flex-col bg-[#F2F2ED] text-[#0A1616] selection:bg-[#00E599] selection:text-[#0A1616]">
+    <html lang="en-bd" className={`${aeonik.variable} font-sans scroll-smooth`} suppressHydrationWarning>
+      <body
+        className="min-h-screen flex flex-col bg-[#F2F2ED] text-[#0A1616] selection:bg-[#00E599] selection:text-[#0A1616]"
+        suppressHydrationWarning
+      >
         <UtilityBar />
         <Header />
         <main className="flex-grow">{children}</main>

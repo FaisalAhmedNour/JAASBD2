@@ -37,7 +37,7 @@ export const navigationConfig: Record<string, MegaMenuCategory> = {
         items: [
           {
             title: "Web Hosting",
-            href: "/hosting/cpanel-hosting",
+            href: "/hosting",
             description: "Fast, managed web hosting",
             icon: "globe",
           },
@@ -60,7 +60,7 @@ export const navigationConfig: Record<string, MegaMenuCategory> = {
         items: [
           {
             title: "Build a Website",
-            href: "/hosting/cpanel-hosting",
+            href: "/hosting",
             description: "Build with AI, install apps or develop with our tools",
             icon: "builder",
           },
@@ -89,7 +89,7 @@ export const navigationConfig: Record<string, MegaMenuCategory> = {
           },
           {
             title: "AI Application Studio",
-            href: "/hosting/cpanel-hosting",
+            href: "/hosting",
             description: "Create AI-powered apps using prompts. This is where ideas come to life.",
             icon: "ai",
           },
@@ -117,19 +117,19 @@ export const navigationConfig: Record<string, MegaMenuCategory> = {
           },
           {
             title: ".bd Domains",
-            href: "/domains",
+            href: "/domains/bd",
             description: "Bangladesh's official web domain",
             icon: "globe-bd",
           },
           {
             title: ".com.bd Domains",
-            href: "/domains",
+            href: "/domains/combd",
             description: "For commercial sites in Bangladesh",
             icon: "globe-bd",
           },
           {
             title: "Domain Price List",
-            href: "/domains",
+            href: "/domains/all-domains",
             description: "Full TLD list with pricing",
             icon: "globe-bd",
           },
@@ -140,13 +140,13 @@ export const navigationConfig: Record<string, MegaMenuCategory> = {
         items: [
           {
             title: "Business Email",
-            href: "/domains",
+            href: "/hosting/hosting-by-service/email",
             description: "Your branded inbox: fast, secure, professional",
             icon: "email",
           },
           {
             title: "Marketing Suite",
-            href: "/hosting",
+            href: "/marketing-suite",
             description: "SEO and marketing tools for small business",
             icon: "marketing",
           },
@@ -165,57 +165,57 @@ export const navigationConfig: Record<string, MegaMenuCategory> = {
       },
     ],
   },
-  pro: {
-    label: "Pro",
-    featured: {
-      title: "Agency Solutions",
-      description: "Multi-client staging, isolated cPanels & priority support.",
-      href: "/agency",
-      image: "/assets/navigation/promenubd.webp",
-    },
-    columns: [
-      {
-        title: "Business & Agencies",
-        items: [
-          {
-            title: "Agency Web Hosting",
-            href: "/agency",
-            description: "Custom multi-client management and staging environments.",
-            icon: "agency",
-          },
-          {
-            title: "Enterprise Dedicated Servers",
-            href: "/hosting/dedicated-servers",
-            description: "Custom SLA, dedicated account managers, and bare-metal power.",
-            icon: "server",
-          },
-          {
-            title: "Partner & Affiliate Program",
-            href: "/partners",
-            description: "Earn recurring affiliate commissions and partner perks.",
-            icon: "partner",
-          },
-        ],
-      },
-      {
-        title: "High Performance Cloud",
-        items: [
-          {
-            title: "Cloud VPS Hosting",
-            href: "/hosting/vps-hosting",
-            description: "Dedicated CPU & RAM with full root/cPanel management.",
-            icon: "cloud",
-          },
-          {
-            title: "Reseller Accounts",
-            href: "/hosting/cpanel-reseller-hosting",
-            description: "Start and scale your own hosting company.",
-            icon: "reseller",
-          },
-        ],
-      },
-    ],
-  },
+  // pro: {
+  //   label: "Pro",
+  //   featured: {
+  //     title: "Agency Solutions",
+  //     description: "Multi-client staging, isolated cPanels & priority support.",
+  //     href: "/agency",
+  //     image: "/assets/navigation/promenubd.webp",
+  //   },
+  //   columns: [
+  //     {
+  //       title: "Business & Agencies",
+  //       items: [
+  //         {
+  //           title: "Agency Web Hosting",
+  //           href: "/agency",
+  //           description: "Custom multi-client management and staging environments.",
+  //           icon: "agency",
+  //         },
+  //         {
+  //           title: "Enterprise Dedicated Servers",
+  //           href: "/hosting/dedicated-servers",
+  //           description: "Custom SLA, dedicated account managers, and bare-metal power.",
+  //           icon: "server",
+  //         },
+  //         {
+  //           title: "Partner & Affiliate Program",
+  //           href: "/partners",
+  //           description: "Earn recurring affiliate commissions and partner perks.",
+  //           icon: "partner",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "High Performance Cloud",
+  //       items: [
+  //         {
+  //           title: "Cloud VPS Hosting",
+  //           href: "/hosting/vps-hosting",
+  //           description: "Dedicated CPU & RAM with full root/cPanel management.",
+  //           icon: "cloud",
+  //         },
+  //         {
+  //           title: "Reseller Accounts",
+  //           href: "/hosting/cpanel-reseller-hosting",
+  //           description: "Start and scale your own hosting company.",
+  //           icon: "reseller",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   resources: {
     label: "Resources",
     featured: {
@@ -291,7 +291,7 @@ export const countryList = [
 
 export const footerLinks = {
   hosting: [
-    { title: "cPanel Hosting", href: "/hosting/cpanel-hosting" },
+    { title: "cPanel Hosting", href: "/hosting" },
     { title: "WordPress Hosting", href: "/hosting/platforms/wordpress-hosting" },
     { title: "VPS Hosting", href: "/hosting/vps-hosting" },
     { title: "Dedicated Servers", href: "/hosting/dedicated-servers" },

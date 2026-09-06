@@ -12,6 +12,14 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-aeonik)", "Inter", "system-ui", "sans-serif"],
         aeonik: ["var(--font-aeonik)", "Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-aeonik)", "Inter", "system-ui", "sans-serif"],
+        body: ["var(--font-aeonik)", "Inter", "system-ui", "sans-serif"],
+      },
+      spacing: {
+        siteContainer: "1.5rem",
+      },
+      padding: {
+        siteContainer: "1.5rem",
       },
       colors: {
         background: "hsl(var(--background))",

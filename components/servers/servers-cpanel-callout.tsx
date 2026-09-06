@@ -24,7 +24,7 @@ export function ServersCpanelCallout() {
               asChild
               className="bg-[#082615] hover:bg-[#0E3D22] text-white font-bold px-6 py-5 rounded-xl shadow-sm"
             >
-              <Link href="/hosting/cpanel-hosting">
+              <Link href="/hosting">
                 <span>Read More</span>
                 <ArrowRight className="w-4 h-4 ml-1.5" />
               </Link>

@@ -11,7 +11,7 @@ export function HeroSection() {
     {
       title: "Web hosting",
       description: "Your first site or a growing small business",
-      href: "/hosting/cpanel-hosting",
+      href: "/hosting",
       icon: Server,
     },
     {
