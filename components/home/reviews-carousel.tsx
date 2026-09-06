@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Star, ChevronLeft, ChevronRight, ArrowRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const caseStudies = [
   {
-    title: "How Bangladeshi Software Scaling on JAASBD",
+    title: "How Bangladeshi Software Scaled with 20x Speeds",
     company: "BS Case Study",
     quote: "Switching to Turbo hosting reduced our application response times by 68% across all districts in Bangladesh.",
     author: "Shamsul Arefin",
@@ -17,7 +18,7 @@ const caseStudies = [
     tag: "Enterprise cPanel",
   },
   {
-    title: "Rajit Solutions: Fast WordPress & E-Commerce",
+    title: "Rajit Solutions: Instant WordPress Checkout",
     company: "Rajit Solutions",
     quote: "LiteSpeed cache with NVMe storage resolved all our checkout delays during peak campaign seasons.",
     author: "Mahmud Hasan",
@@ -50,18 +51,19 @@ export function ReviewsCarousel() {
   };
 
   return (
-    <section className="py-20 bg-[#F2F2ED] border-t border-[#E5E7EB] relative">
+    <section className="py-20 bg-[#082615] text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3">
-            <span className="text-xs sm:text-sm font-semibold text-[#067547] uppercase tracking-wider">
+            <span className="text-xs sm:text-sm font-semibold text-[#00E599] uppercase tracking-wider flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5" />
               Customer Stories
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1616] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
               Get to know our customers
             </h2>
-            <p className="text-[#6D7779] text-sm sm:text-base max-w-xl">
+            <p className="text-[#BDC8C5] text-sm sm:text-base max-w-xl leading-relaxed">
               Want to know the full story on our customers? Read their experiences with hosting.com and how we helped them scale.
             </p>
           </div>
@@ -70,14 +72,14 @@ export function ReviewsCarousel() {
           <div className="flex items-center gap-3">
             <button
               onClick={prev}
-              className="w-11 h-11 rounded-full bg-white border border-[#D1D5DB] flex items-center justify-center text-[#0A1616] hover:border-[#082615] transition-all shadow-sm"
+              className="w-11 h-11 rounded-full bg-[#0D331E] border border-[#1A4B2E] flex items-center justify-center text-white hover:border-[#00E599] transition-all shadow-sm"
               aria-label="Previous story"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={next}
-              className="w-11 h-11 rounded-full bg-white border border-[#D1D5DB] flex items-center justify-center text-[#0A1616] hover:border-[#082615] transition-all shadow-sm"
+              className="w-11 h-11 rounded-full bg-[#0D331E] border border-[#1A4B2E] flex items-center justify-center text-white hover:border-[#00E599] transition-all shadow-sm"
               aria-label="Next story"
             >
               <ChevronRight className="w-5 h-5" />
@@ -90,38 +92,38 @@ export function ReviewsCarousel() {
           {caseStudies.map((study, idx) => (
             <div
               key={idx}
-              className="rounded-3xl bg-white border border-[#DFE3E1] overflow-hidden flex flex-col justify-between hover:border-[#9CA3AF] shadow-sm transition-all group"
+              className="rounded-3xl bg-[#0D331E] border border-[#1A4B2E] overflow-hidden flex flex-col justify-between hover:border-[#00E599]/50 shadow-lg transition-all group"
             >
-              <div className="relative h-48 w-full bg-[#E5E7EB]">
+              <div className="relative h-48 w-full bg-[#082615] overflow-hidden">
                 <Image
                   src={study.image}
                   alt={study.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-[#067547]">
+                <div className="absolute top-4 left-4 bg-[#082615]/85 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-[#00E599] border border-[#00E599]/30">
                   {study.tag}
                 </div>
               </div>
 
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <h3 className="text-lg font-bold text-[#0A1616] mb-2 leading-snug">
+                  <h3 className="text-lg font-bold text-white mb-2 leading-snug">
                     {study.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#4B5563] italic leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#BDC8C5] italic leading-relaxed">
                     &ldquo;{study.quote}&rdquo;
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#F3F4F6] flex items-center justify-between">
+                <div className="pt-4 border-t border-[#1C3E2B] flex items-center justify-between">
                   <div>
-                    <div className="text-xs font-bold text-[#0A1616]">{study.author}</div>
-                    <div className="text-[11px] text-[#6D7779]">{study.role}, {study.company}</div>
+                    <div className="text-xs font-bold text-white">{study.author}</div>
+                    <div className="text-[11px] text-[#8E9F9A]">{study.role}, {study.company}</div>
                   </div>
                   <Link
                     href="/case-studies"
-                    className="w-8 h-8 rounded-full bg-[#F9FAF8] border border-[#E5E7EB] flex items-center justify-center text-[#0A1616] group-hover:bg-[#082615] group-hover:text-white transition-colors"
+                    className="w-8 h-8 rounded-full bg-[#16472D] border border-[#225E3B] flex items-center justify-center text-[#00E599] group-hover:bg-[#00E599] group-hover:text-[#082615] transition-colors"
                   >
                     <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -129,6 +131,22 @@ export function ReviewsCarousel() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Meet Our Clients CTA Button */}
+        <div className="mt-12 text-center">
+          <Button
+            asChild
+            size="lg"
+            className="rounded-full bg-white text-[#082615] hover:bg-[#F2F2ED] font-bold text-xs sm:text-sm px-7 py-3 shadow-md"
+          >
+            <Link href="/case-studies" className="inline-flex items-center gap-2">
+              <span>Meet our clients</span>
+              <span className="w-5 h-5 rounded-full bg-[#082615] text-[#00E599] flex items-center justify-center">
+                <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

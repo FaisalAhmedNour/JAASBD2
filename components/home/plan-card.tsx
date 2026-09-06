@@ -24,16 +24,16 @@ export function PlanCard({ plan, isAnnual, currency = "BDT" }: PlanCardProps) {
     <div
       className={`relative rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-white ${
         plan.isPopular
-          ? "border-2 border-[#082615] shadow-xl scale-100 lg:scale-[1.02] z-10"
-          : "border border-[#E5E7EB] hover:border-[#9CA3AF] shadow-sm hover:shadow-md"
+          ? "border-2 border-[#082615] shadow-xl scale-100 lg:scale-[1.02] z-10 pt-10"
+          : "border border-[#DFE3E1] hover:border-[#9CA3AF] shadow-sm hover:shadow-md"
       }`}
     >
       {/* Popular / Promo Ribbon */}
-      {plan.badge && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-          <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-[#082615] text-white font-bold text-xs shadow-md uppercase tracking-wide">
-            <Sparkles className="w-3.5 h-3.5 text-[#00E599]" />
-            {plan.badge}
+      {plan.isPopular && (
+        <div className="absolute top-0 left-0 right-0 bg-[#082615] text-white py-1.5 rounded-t-[22px] text-center">
+          <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#00E599]">
+            <Sparkles className="w-3.5 h-3.5" />
+            {plan.badge || "Most Popular Choice"}
           </span>
         </div>
       )}

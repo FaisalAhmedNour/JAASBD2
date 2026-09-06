@@ -67,15 +67,21 @@ export function Header() {
 
   return (
     <>
-      <div
-        className="sticky top-0 z-40 w-full pt-3 pb-3 px-4 sm:px-6 lg:px-8 bg-transparent"
-        ref={headerRef}
-        onMouseEnter={handleHeaderEnter}
-        onMouseLeave={handleHeaderLeave}
-      >
-        <div className="max-w-7xl mx-auto">
-          {/* Floating Pill / Expanding Header Shell */}
-          <div className="relative rounded-2xl bg-white border border-[#E5E7EB] shadow-[0_4px_25px_rgba(0,0,0,0.06)] transition-all duration-300 overflow-hidden">
+      {/* Sticky Top Nav Wrapper (Fixed height placeholder prevents page from shifting down when card expands) */}
+      <header className="sticky top-0 z-40 w-full px-4 sm:px-6 lg:px-8 pointer-events-none">
+        <div className="max-w-7xl mx-auto h-[88px] lg:h-[104px] relative">
+          {/* Unified Floating Pill / Expanding Header Card */}
+          <div
+            ref={headerRef}
+            onMouseEnter={handleHeaderEnter}
+            onMouseLeave={handleHeaderLeave}
+            className={`absolute top-3 left-0 right-0 rounded-2xl bg-white border border-[#E5E7EB] transition-all duration-300 overflow-hidden pointer-events-auto z-50 ${
+              activeMenu || isSearchOpen
+                ? "shadow-[0_16px_45px_rgba(0,0,0,0.12)] border-[#D1D5DB]"
+                : "shadow-[0_4px_25px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
+            }`}
+          >
+            {/* Main Navbar Top Row */}
             <div className="flex items-center justify-between h-16 lg:h-20 px-4 sm:px-6">
               {/* Col 1: Brand Logo */}
               <div className="flex items-center shrink-0">
@@ -127,8 +133,15 @@ export function Header() {
                 {/* Search Button */}
                 <button
                   type="button"
-                  onClick={() => setIsSearchOpen(!isSearchOpen)}
-                  className="rounded-lg border border-[#E5E7EB] p-2 text-[#374151] hover:text-[#0A1616] hover:bg-[#F3F4F6] transition-colors"
+                  onClick={() => {
+                    setIsSearchOpen(!isSearchOpen);
+                    setActiveMenu(null);
+                  }}
+                  className={`rounded-lg border p-2 transition-colors ${
+                    isSearchOpen
+                      ? "border-[#067547] text-[#067547] bg-[#E8F8F0]"
+                      : "border-[#E5E7EB] text-[#374151] hover:text-[#0A1616] hover:bg-[#F3F4F6]"
+                  }`}
                   aria-label="Search"
                 >
                   <Search className="w-5 h-5" />
@@ -230,7 +243,7 @@ export function Header() {
               </div>
             )}
 
-            {/* Expandable Mega Menu Shell */}
+            {/* Unified Expandable Mega Menu Shell (Expands inside the card over the page) */}
             <div
               className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
                 activeMenu
@@ -251,7 +264,7 @@ export function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Mobile Navigation Drawer */}
       <MobileNav

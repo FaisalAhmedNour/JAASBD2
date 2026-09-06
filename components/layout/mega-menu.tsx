@@ -157,6 +157,73 @@ function NavIcon({ name }: { name?: string }) {
           <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
         </svg>
       );
+    case "about":
+      return (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067547" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="7" r="3" />
+          <circle cx="5" cy="11" r="2.5" />
+          <circle cx="19" cy="11" r="2.5" />
+          <path d="M7 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2" />
+          <path d="M1.5 21v-1.5a3.5 3.5 0 0 1 3.5-3.5" />
+          <path d="M22.5 21v-1.5a3.5 3.5 0 0 0-3.5-3.5" />
+        </svg>
+      );
+    case "contact":
+    case "support":
+      return (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067547" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <rect width="18" height="18" x="3" y="3" rx="3" />
+          <circle cx="12" cy="10" r="3" />
+          <path d="M7 18a5 5 0 0 1 10 0" />
+        </svg>
+      );
+    case "case-studies":
+    case "case-study":
+      return (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067547" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M7 10v12" />
+          <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z" />
+        </svg>
+      );
+    case "blog":
+    case "book":
+      return (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067547" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="8" x2="16" y1="13" y2="13" />
+          <line x1="8" x2="16" y1="17" y2="17" />
+        </svg>
+      );
+    case "knowledge":
+      return (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067547" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z" />
+          <line x1="9" x2="15" y1="21" y2="21" />
+        </svg>
+      );
+    case "news":
+      return (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067547" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      );
+    case "affiliate":
+      return (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067547" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M19 11v6" />
+          <path d="M22 14h-6" />
+        </svg>
+      );
+    case "referral":
+      return (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067547" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m11 17 2 2a1 1 0 0 0 1.42 0l4.24-4.24a1 1 0 0 0 0-1.42l-2-2" />
+          <path d="m2 12 5.29-5.29a1 1 0 0 1 1.41 0l4.24 4.24a1 1 0 0 1 0 1.41L7.65 17.65a1 1 0 0 1-1.41 0L2 13.41A1 1 0 0 1 2 12Z" />
+        </svg>
+      );
     case "company":
       return (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -168,28 +235,6 @@ function NavIcon({ name }: { name?: string }) {
           <path d="M16 10h.01" />
           <path d="M8 14h.01" />
           <path d="M16 14h.01" />
-        </svg>
-      );
-    case "support":
-      return (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5a9 9 0 0 1 18 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
-          <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
-        </svg>
-      );
-    case "case-study":
-      return (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-          <polyline points="16 7 22 7 22 13" />
-        </svg>
-      );
-    case "book":
-      return (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
-          <path d="M6 6h10" />
-          <path d="M6 10h10" />
         </svg>
       );
     default:

@@ -1,113 +1,167 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Users, Award, Radio } from "lucide-react";
 
 export function BangladeshGrowth() {
+  const [activeTab, setActiveTab] = useState("all");
+
   return (
-    <section className="py-20 bg-white border-b border-[#E5E7EB] relative">
+    <section className="py-16 sm:py-24 bg-[#F2F2ED] border-b border-[#DFE3E1] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <span className="text-xs sm:text-sm font-semibold text-[#067547] uppercase tracking-wider">
-            Bangladesh Growth Story
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0A1616] tracking-tight">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1616] tracking-tight">
             We are proud to be part of Bangladesh&apos;s digital growth story
           </h2>
           <p className="text-[#6D7779] text-sm sm:text-base leading-relaxed">
-            Tailored for creators, trusted by agencies and built to scale with enterprises. No matter who you are, we&apos;re here to help you grow online.
+            Powering thousands of local businesses, freelancers, startups, and agencies across Bangladesh.
           </p>
+
+          {/* Interactive Filter Pills */}
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-2">
+            <button
+              onClick={() => setActiveTab("all")}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+                activeTab === "all"
+                  ? "bg-[#082615] text-white shadow-sm"
+                  : "bg-white border border-[#DFE3E1] text-[#4B5563] hover:border-[#082615]"
+              }`}
+            >
+              • Our Story
+            </button>
+            <button
+              onClick={() => setActiveTab("culture")}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+                activeTab === "culture"
+                  ? "bg-[#082615] text-white shadow-sm"
+                  : "bg-white border border-[#DFE3E1] text-[#4B5563] hover:border-[#082615]"
+              }`}
+            >
+              Culture
+            </button>
+            <button
+              onClick={() => setActiveTab("media")}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+                activeTab === "media"
+                  ? "bg-[#082615] text-white shadow-sm"
+                  : "bg-white border border-[#DFE3E1] text-[#4B5563] hover:border-[#082615]"
+              }`}
+            >
+              Media
+            </button>
+          </div>
         </div>
 
-        {/* 3 Story Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1: Launch Event */}
-          <div className="rounded-3xl border border-[#DFE3E1] bg-[#F9FAF8] overflow-hidden flex flex-col justify-between hover:border-[#9CA3AF] shadow-sm transition-all group">
-            <div className="relative h-56 w-full bg-[#E5E7EB]">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-6xl mx-auto">
+          {/* Left Large Bento Card (Spans 6 cols on desktop) */}
+          <div className="lg:col-span-6 rounded-3xl bg-[#082615] border border-[#16472D] overflow-hidden flex flex-col justify-between shadow-md group transition-all">
+            <div className="relative h-64 sm:h-72 w-full overflow-hidden">
               <Image
                 src="/assets/features/bangladesh-launch-event.jpeg"
                 alt="Celebrating Launch in Bangladesh"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
+              <div className="absolute top-4 left-4 bg-[#082615]/85 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[#00E599] flex items-center gap-1.5 border border-[#00E599]/30">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Official Launch</span>
+              </div>
             </div>
-            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <h3 className="text-xl font-bold text-[#0A1616] mb-2">
-                  Celebrating Launch in Bangladesh
+
+            <div className="p-7 sm:p-8 flex-1 flex flex-col justify-between text-white space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#00E599]">
+                  <Award className="w-4 h-4" />
+                  <span>Events & Sponsorships</span>
+                </div>
+                <h3 className="text-2xl font-bold tracking-tight text-white leading-snug">
+                  Celebrating launch in Bangladesh
                 </h3>
-                <p className="text-xs sm:text-sm text-[#6D7779] leading-relaxed">
-                  Thank you to everyone who joined us. Take a look back at our official launch event in Dhaka and our vision for high-speed local hosting.
+                <p className="text-xs sm:text-sm text-[#BDC8C5] leading-relaxed">
+                  Thank you to everyone who joined us. Take a look back at our official launch event in Dhaka and our vision for high-speed local hosting infrastructure.
                 </p>
               </div>
-              <Link
-                href="/about"
-                className="inline-flex items-center text-xs font-bold text-[#067547] hover:underline"
-              >
-                <span>Read launch recap</span>
-                <ArrowRight className="w-3.5 h-3.5 ml-1" />
-              </Link>
+
+              <div className="pt-4 border-t border-[#1C3E2B]">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center text-xs sm:text-sm font-bold text-[#00E599] hover:underline gap-1.5"
+                >
+                  <span>Read launch recap</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Card 2: Our Story */}
-          <div className="rounded-3xl border border-[#DFE3E1] bg-[#F9FAF8] overflow-hidden flex flex-col justify-between hover:border-[#9CA3AF] shadow-sm transition-all group">
-            <div className="relative h-56 w-full bg-[#E5E7EB]">
-              <Image
-                src="/assets/features/our-story.jpg"
-                alt="Our Story"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
+          {/* Right Column Bento Cards (Spans 6 cols on desktop) */}
+          <div className="lg:col-span-6 flex flex-col gap-6">
+            {/* Right Top Split Card (Culture + Team Photo) */}
+            <div className="rounded-3xl bg-[#082615] border border-[#16472D] overflow-hidden grid grid-cols-1 sm:grid-cols-2 shadow-md group">
+              {/* Left Text */}
+              <div className="p-6 sm:p-7 flex flex-col justify-between text-white space-y-3">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#00E599]">
+                    <Users className="w-4 h-4" />
+                    <span>Culture</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white">
+                    Culture
+                  </h3>
+                  <p className="text-xs text-[#BDC8C5] leading-relaxed">
+                    Driven by a passionate local team delivering 24/7 native Bangla & English support to businesses nationwide.
+                  </p>
+                </div>
+
+                <Link
+                  href="/about"
+                  className="inline-flex items-center text-xs font-bold text-[#00E599] hover:underline gap-1 pt-2"
+                >
+                  <span>Our values</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+
+              {/* Right Office Photo */}
+              <div className="relative h-48 sm:h-full min-h-[160px] w-full overflow-hidden">
+                <Image
+                  src="/assets/features/meet-us.jpg"
+                  alt="Team meeting in Dhaka"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
-            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <h3 className="text-xl font-bold text-[#0A1616] mb-2">
-                  Our Story
+
+            {/* Right Bottom Card (Media) */}
+            <div className="rounded-3xl bg-[#082615] border border-[#16472D] p-6 sm:p-7 text-white flex flex-col justify-between shadow-md group space-y-4">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#00E599]">
+                  <Radio className="w-4 h-4" />
+                  <span>Media</span>
+                </div>
+                <h3 className="text-xl font-bold text-white">
+                  Media
                 </h3>
-                <p className="text-xs sm:text-sm text-[#6D7779] leading-relaxed">
-                  From the foundations of local tech teams in Dhaka, read about how we started and built trust with thousands of clients nationwide.
+                <p className="text-xs sm:text-sm text-[#BDC8C5] leading-relaxed">
+                  Read press releases, media coverage, and technical milestones of our Bangladesh expansion and tier-3 local cloud deployments.
                 </p>
               </div>
-              <Link
-                href="/about"
-                className="inline-flex items-center text-xs font-bold text-[#067547] hover:underline"
-              >
-                <span>Discover our journey</span>
-                <ArrowRight className="w-3.5 h-3.5 ml-1" />
-              </Link>
-            </div>
-          </div>
 
-          {/* Card 3: Meet Us */}
-          <div className="rounded-3xl border border-[#DFE3E1] bg-[#F9FAF8] overflow-hidden flex flex-col justify-between hover:border-[#9CA3AF] shadow-sm transition-all group p-6">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8F8F0] border border-[#00E599]/40 flex items-center justify-center">
-                <MapPin className="w-6 h-6 text-[#067547]" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0A1616]">
-                Meet Us in Dhaka
-              </h3>
-              <p className="text-xs sm:text-sm text-[#6D7779] leading-relaxed">
-                Visit our local office and discuss your web hosting, custom server setups, and business growth face-to-face with our technical experts.
-              </p>
-              <div className="p-4 rounded-xl bg-white border border-[#E5E7EB] text-xs text-[#0A1616] space-y-1">
-                <div className="font-bold">Dhaka Office</div>
-                <div className="text-[#6D7779]">Gulshan / Banani, Dhaka, Bangladesh</div>
-                <div className="text-[#067547] font-semibold pt-1">Hotline: +880 9614-101010</div>
+              <div className="pt-2 border-t border-[#1C3E2B]">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center text-xs sm:text-sm font-bold text-[#00E599] hover:underline gap-1.5"
+                >
+                  <span>Explore media & press</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </div>
-
-            <Link
-              href="/about/contact"
-              className="inline-flex items-center text-xs font-bold text-[#067547] hover:underline pt-4"
-            >
-              <span>Schedule an appointment</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1" />
-            </Link>
           </div>
         </div>
       </div>
